@@ -1,0 +1,11 @@
+--- font-alias-1.0.1/configure.ac.fonts-alias-fontdir-fix	2005-12-16 01:53:02.000000000 -0500
++++ font-alias-1.0.1/configure.ac	2005-12-16 01:53:41.000000000 -0500
+@@ -30,7 +30,7 @@
+ 
+ m4_ifdef([AS_HELP_STRING], , [m4_define([AS_HELP_STRING], m4_defn([AC_HELP_STRING]))])
+ 
+-DEFAULT_TOPFONTDIR=${libdir}/X11/fonts
++DEFAULT_TOPFONTDIR=$(pkg-config --variable=fontdir fontutil)
+ AC_ARG_WITH(top-fontdir,
+ 	AS_HELP_STRING([--with-top-fontdir=<path>], [Path to top level font directory]),
+ 	[TOPFONTDIR="$withval"],

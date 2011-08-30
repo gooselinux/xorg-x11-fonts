@@ -1,0 +1,11 @@
+--- encodings-1.0.0/configure.ac.encodings-fontdir-fix	2005-12-16 01:57:27.000000000 -0500
++++ encodings-1.0.0/configure.ac	2005-12-16 01:58:04.000000000 -0500
+@@ -20,7 +20,7 @@
+ 
+ m4_ifdef([AS_HELP_STRING], , [m4_define([AS_HELP_STRING], m4_defn([AC_HELP_STRING]))])
+ 
+-DEFAULT_ENCODINGSDIR=${libdir}/X11/fonts/encodings
++DEFAULT_ENCODINGSDIR=$(pkg-config --variable=fontdir fontutil)/encodings
+ AC_ARG_WITH(encodingsdir,
+ 	AS_HELP_STRING([--with-encodingsdir=ENCODINGSDIR], [Path to install font encodings]),
+ 	[ENCODINGSDIR="$withval"],
